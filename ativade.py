@@ -2,18 +2,21 @@ deposito = 0
 saque = 0
 extratos = []
 cont_saques = 0
-extratos_str = []
 
 
 while True:
-    print(f'Valor ná conta: R${deposito:.2f}')
+
     opção = int(input(' 1-Deposito; 2-Saque; 3-Extrato; 4-Sair; '))
     print('')
     if opção == 1:
+
         depositar = float(input('Valor para depositar: '))
-        deposito += depositar
-        print(f'Valor depositado: R${depositar:.2f}')
-        extratos.append(f'Deposito: R$ {depositar:.2f}')
+        if depositar < 0:
+            print('Valor inválido! Valor negativo inserido')
+        else:
+            deposito += depositar
+            print(f'Valor depositado: R${depositar:.2f}')
+            extratos.append(f'Deposito: R$ {depositar:.2f}')
 
         print('')
 
